@@ -82,7 +82,7 @@ reduce f (x:xs) acc = reduce f xs (f x acc)
 
 eulerTotient :: Integer -> Integer
 eulerTotient n = let relativelyPrime = map (\x -> if euclid n x == 1 then 1 else 0) [1..n-1] in
-    reduce (+) (relativelyPrime) 0
+    reduce (+) relativelyPrime 0
 
 {-
 4. Не пользуясь стандартными функциями, реализуйте возведение в степень:
